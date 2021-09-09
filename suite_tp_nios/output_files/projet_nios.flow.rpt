@@ -1,5 +1,5 @@
 Flow report for projet_nios
-Thu Sep 09 10:16:28 2021
+Thu Sep 09 08:20:39 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Sep 09 10:16:19 2021       ;
+; Flow Status                        ; Successful - Thu Sep 09 08:20:30 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; projet_nios                                 ;
 ; Top-level Entity Name              ; config_tp                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,775 / 22,320 ( 8 % )                      ;
-;     Total combinational functions  ; 1,620 / 22,320 ( 7 % )                      ;
-;     Dedicated logic registers      ; 1,042 / 22,320 ( 5 % )                      ;
-; Total registers                    ; 1042                                        ;
+; Total logic elements               ; 1,572 / 22,320 ( 7 % )                      ;
+;     Total combinational functions  ; 1,449 / 22,320 ( 6 % )                      ;
+;     Dedicated logic registers      ; 878 / 22,320 ( 4 % )                        ;
+; Total registers                    ; 878                                         ;
 ; Total pins                         ; 10 / 154 ( 6 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 273,408 / 608,256 ( 45 % )                  ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/09/2021 10:15:11 ;
+; Start date & time ; 09/09/2021 08:19:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; projet_nios         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                       ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+-------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 167746773096460.163117891108936                             ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 167746773096460.163117196207964                             ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                          ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                           ; --            ; --          ; --         ;
 ; MISC_FILE                           ; config_tp/synthesis/../config_tp.cmp                        ; --            ; --          ; --         ;
@@ -89,7 +89,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                ; --            ; --          ; --         ;
 ; SLD_FILE                            ; config_tp/synthesis/config_tp.regmap                        ; --            ; --          ; --         ;
 ; SLD_FILE                            ; config_tp/synthesis/config_tp.debuginfo                     ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME config_tp HAS_SOPCINFO 1 GENERATION_ID 1631178749 ; --            ; config_tp   ; --         ;
+; SLD_INFO                            ; QSYS_NAME config_tp HAS_SOPCINFO 1 GENERATION_ID 1631170964 ; --            ; config_tp   ; --         ;
 ; SOPCINFO_FILE                       ; config_tp/synthesis/../../config_tp.sopcinfo                ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                          ; --            ; --          ; --         ;
 ; TOP_LEVEL_ENTITY                    ; config_tp                                                   ; projet_nios   ; --          ; --         ;
@@ -101,11 +101,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:42     ; 1.0                     ; 757 MB              ; 00:00:53                           ;
-; Fitter               ; 00:00:13     ; 1.1                     ; 1369 MB             ; 00:00:11                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 547 MB              ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 660 MB              ; 00:00:03                           ;
-; Total                ; 00:01:05     ; --                      ; --                  ; 00:01:09                           ;
+; Analysis & Synthesis ; 00:00:41     ; 1.0                     ; 758 MB              ; 00:00:51                           ;
+; Fitter               ; 00:00:13     ; 1.1                     ; 1379 MB             ; 00:00:11                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 550 MB              ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 657 MB              ; 00:00:03                           ;
+; Total                ; 00:01:04     ; --                      ; --                  ; 00:01:07                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
