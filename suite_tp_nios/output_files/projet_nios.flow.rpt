@@ -1,0 +1,133 @@
+Flow report for projet_nios
+Thu Sep 09 08:20:39 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Thu Sep 09 08:20:30 2021       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; projet_nios                                 ;
+; Top-level Entity Name              ; config_tp                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE22F17C6                                ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 1,572 / 22,320 ( 7 % )                      ;
+;     Total combinational functions  ; 1,449 / 22,320 ( 6 % )                      ;
+;     Dedicated logic registers      ; 878 / 22,320 ( 4 % )                        ;
+; Total registers                    ; 878                                         ;
+; Total pins                         ; 10 / 154 ( 6 % )                            ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 273,408 / 608,256 ( 45 % )                  ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 09/09/2021 08:19:22 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; projet_nios         ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                             ;
++-------------------------------------+-------------------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                                       ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+-------------------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 167746773096460.163117196207964                             ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                          ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                           ; --            ; --          ; --         ;
+; MISC_FILE                           ; config_tp/synthesis/../config_tp.cmp                        ; --            ; --          ; --         ;
+; MISC_FILE                           ; config_tp/synthesis/../../config_tp.qsys                    ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                        ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                      ; --            ; config_tp   ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                      ; --            ; config_tp   ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                      ; --            ; config_tp   ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                         ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                       ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                ; --            ; --          ; --         ;
+; SLD_FILE                            ; config_tp/synthesis/config_tp.regmap                        ; --            ; --          ; --         ;
+; SLD_FILE                            ; config_tp/synthesis/config_tp.debuginfo                     ; --            ; --          ; --         ;
+; SLD_INFO                            ; QSYS_NAME config_tp HAS_SOPCINFO 1 GENERATION_ID 1631170964 ; --            ; config_tp   ; --         ;
+; SOPCINFO_FILE                       ; config_tp/synthesis/../../config_tp.sopcinfo                ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                          ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; config_tp                                                   ; projet_nios   ; --          ; --         ;
++-------------------------------------+-------------------------------------------------------------+---------------+-------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:41     ; 1.0                     ; 758 MB              ; 00:00:51                           ;
+; Fitter               ; 00:00:13     ; 1.1                     ; 1379 MB             ; 00:00:11                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 550 MB              ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 657 MB              ; 00:00:03                           ;
+; Total                ; 00:01:04     ; --                      ; --                  ; 00:01:07                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; U4-305p0         ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter               ; U4-305p0         ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler            ; U4-305p0         ; Windows 7 ; 6.1        ; x86_64         ;
+; Timing Analyzer      ; U4-305p0         ; Windows 7 ; 6.1        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off projet_nios -c projet_nios
+quartus_fit --read_settings_files=off --write_settings_files=off projet_nios -c projet_nios
+quartus_asm --read_settings_files=off --write_settings_files=off projet_nios -c projet_nios
+quartus_sta projet_nios -c projet_nios
+
+
+
