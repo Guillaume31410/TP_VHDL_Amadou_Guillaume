@@ -1,0 +1,9 @@
+*
+!.gitignore
+!*.vhd
+!rtl/Simu/*
+!*.qsf
+!*.qpf
+!*.pdf
+!img/*
+!*/

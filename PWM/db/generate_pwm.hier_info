@@ -1,0 +1,23 @@
+|generate_pwm
+CLK => incr[0].CLK
+CLK => incr[1].CLK
+CLK => incr[2].CLK
+CLK => incr[3].CLK
+CLK => pro_sortie.CLK
+Rst => pro_sortie.ACLR
+Rst => incr[0].ENA
+Rst => incr[3].ENA
+Rst => incr[2].ENA
+Rst => incr[1].ENA
+MORE => cycle[0].OUTPUTSELECT
+MORE => cycle[1].OUTPUTSELECT
+MORE => cycle[2].OUTPUTSELECT
+MORE => cycle[3].OUTPUTSELECT
+MORE => cycle[3].IN1
+ALPHA[0] << cycle[0].DB_MAX_OUTPUT_PORT_TYPE
+ALPHA[1] << cycle[1].DB_MAX_OUTPUT_PORT_TYPE
+ALPHA[2] << cycle[2].DB_MAX_OUTPUT_PORT_TYPE
+ALPHA[3] << cycle[3].DB_MAX_OUTPUT_PORT_TYPE
+SORTIE << pro_sortie.DB_MAX_OUTPUT_PORT_TYPE
+
+

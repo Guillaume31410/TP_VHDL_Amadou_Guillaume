@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ALPHA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALPHA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALPHA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALPHA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SORTIE",
+					"strict" : false
+				},
+				{
+					"name" : "MORE",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "Rst",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
