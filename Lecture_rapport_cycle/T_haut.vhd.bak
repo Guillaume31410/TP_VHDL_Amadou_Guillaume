@@ -1,0 +1,18 @@
+library ieee
+use ieee.std_logic_1164.all ;
+use ieee.std_logic.all ;
+
+entity T_haut is
+	port( CLK_50M, RAZ_n, IN_PWM, CONTINU, START_STOP	:	in std_logic ;
+			DATA_VALID												:	out std_logic ;
+			DATA_VALID, DATA_COMPAS						: 	out std_logic_vector(8 downto 0) 
+	) ;
+end T_haut
+
+
+architecture DESCR of T_HAUT is
+begin
+	signal read_angle	: std_logic_vector(8 downto 0) ;
+	
+	
+		

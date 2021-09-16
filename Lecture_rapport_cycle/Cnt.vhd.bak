@@ -1,0 +1,30 @@
+library ieee
+use ieee.std_logic_1164.all ;
+use ieee.std_logic_unsigned.all ;
+
+entity Cnt is 
+	generic ( N : integer := 8 ) ;
+	port(	ARst_N	:	in	std_logic	;
+			Clk		:	in	std_logic	; 
+			SRrst		:	in	std_logic	;
+			EN			:	in std_logic	;
+			Q			: 	out std_logic_vector(N-1 downto 0)
+		) ;
+end entity Cnt	;
+
+architecture rtl of Cnt is 
+	signal sQ	:	 std_logic_vector(N-1, downto 0)	;
+begin
+	pCnt : process(Clk, ARst_N)
+	begin
+		if ARst_N = '0' then sQ <= (others => '0') ;
+		elsif rising_edge(Clk) then 
+			if SRst = '1' then sQ <= (others => '0') ;
+			else 
+				if SRst = '1' then sQ <= sQ + 1 ;
+				end if ;
+			end if ;
+		end if ;
+	end process pCnt ;
+Q <= sQ ;
+end architecture rtl ;
