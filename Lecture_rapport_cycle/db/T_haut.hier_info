@@ -1,0 +1,122 @@
+|T_haut
+CLK_50M => detect_FM:front_mont.clk
+CLK_50M => Cnt:uCnt1.Clk
+CLK_50M => Cnt:uCnt2.Clk
+RAZ_n => ~NO_FANOUT~
+IN_PWM => detect_FM:front_mont.E
+CONTINU => ~NO_FANOUT~
+START_STOP => ~NO_FANOUT~
+DATA_VALID <= comb.DB_MAX_OUTPUT_PORT_TYPE
+DATA_COMPAS[0] <= Cnt:uCnt2.Q[0]
+DATA_COMPAS[1] <= Cnt:uCnt2.Q[1]
+DATA_COMPAS[2] <= Cnt:uCnt2.Q[2]
+DATA_COMPAS[3] <= Cnt:uCnt2.Q[3]
+DATA_COMPAS[4] <= Cnt:uCnt2.Q[4]
+DATA_COMPAS[5] <= Cnt:uCnt2.Q[5]
+DATA_COMPAS[6] <= Cnt:uCnt2.Q[6]
+DATA_COMPAS[7] <= Cnt:uCnt2.Q[7]
+DATA_COMPAS[8] <= Cnt:uCnt2.Q[8]
+
+
+|T_haut|detect_FM:front_mont
+clk => sortie.CLK
+E => sortie.ENA
+O <= sortie.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|T_haut|Cnt:uCnt1
+ARst_N => sQ[0].ACLR
+ARst_N => sQ[1].ACLR
+ARst_N => sQ[2].ACLR
+ARst_N => sQ[3].ACLR
+ARst_N => sQ[4].ACLR
+ARst_N => sQ[5].ACLR
+ARst_N => sQ[6].ACLR
+ARst_N => sQ[7].ACLR
+ARst_N => sQ[8].ACLR
+ARst_N => sQ[9].ACLR
+ARst_N => sQ[10].ACLR
+ARst_N => sQ[11].ACLR
+ARst_N => sQ[12].ACLR
+Clk => sQ[0].CLK
+Clk => sQ[1].CLK
+Clk => sQ[2].CLK
+Clk => sQ[3].CLK
+Clk => sQ[4].CLK
+Clk => sQ[5].CLK
+Clk => sQ[6].CLK
+Clk => sQ[7].CLK
+Clk => sQ[8].CLK
+Clk => sQ[9].CLK
+Clk => sQ[10].CLK
+Clk => sQ[11].CLK
+Clk => sQ[12].CLK
+SRst => sQ[0].ENA
+SRst => sQ[12].ENA
+SRst => sQ[11].ENA
+SRst => sQ[10].ENA
+SRst => sQ[9].ENA
+SRst => sQ[8].ENA
+SRst => sQ[7].ENA
+SRst => sQ[6].ENA
+SRst => sQ[5].ENA
+SRst => sQ[4].ENA
+SRst => sQ[3].ENA
+SRst => sQ[2].ENA
+SRst => sQ[1].ENA
+EN => ~NO_FANOUT~
+Q[0] <= sQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= sQ[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= sQ[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= sQ[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= sQ[4].DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= sQ[5].DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= sQ[6].DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= sQ[7].DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= sQ[8].DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= sQ[9].DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= sQ[10].DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= sQ[11].DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= sQ[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|T_haut|Cnt:uCnt2
+ARst_N => sQ[0].ACLR
+ARst_N => sQ[1].ACLR
+ARst_N => sQ[2].ACLR
+ARst_N => sQ[3].ACLR
+ARst_N => sQ[4].ACLR
+ARst_N => sQ[5].ACLR
+ARst_N => sQ[6].ACLR
+ARst_N => sQ[7].ACLR
+ARst_N => sQ[8].ACLR
+Clk => sQ[0].CLK
+Clk => sQ[1].CLK
+Clk => sQ[2].CLK
+Clk => sQ[3].CLK
+Clk => sQ[4].CLK
+Clk => sQ[5].CLK
+Clk => sQ[6].CLK
+Clk => sQ[7].CLK
+Clk => sQ[8].CLK
+SRst => sQ[0].ENA
+SRst => sQ[8].ENA
+SRst => sQ[7].ENA
+SRst => sQ[6].ENA
+SRst => sQ[5].ENA
+SRst => sQ[4].ENA
+SRst => sQ[3].ENA
+SRst => sQ[2].ENA
+SRst => sQ[1].ENA
+EN => ~NO_FANOUT~
+Q[0] <= sQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= sQ[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= sQ[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= sQ[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= sQ[4].DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= sQ[5].DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= sQ[6].DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= sQ[7].DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= sQ[8].DB_MAX_OUTPUT_PORT_TYPE
+
+

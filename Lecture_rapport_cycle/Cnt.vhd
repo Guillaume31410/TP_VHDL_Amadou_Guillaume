@@ -6,7 +6,7 @@ entity Cnt is
 	generic ( N : integer := 8 ) ;			-- Definition de la taille du vecteur sur N bits (8 par defaut)
 	port(	ARst_N	:	in	std_logic	;		-- Reset asynchrone 
 			Clk		:	in	std_logic	; 		
-			SRrst		:	in	std_logic	;		-- Reset synchrone 
+			SRst		:	in	std_logic	;		-- Reset synchrone 
 			EN			:	in std_logic	;		-- Autorisation d'incrementation
 			Q			: 	out std_logic_vector(N-1 downto 0) -- Sortie du compteur sur N bits (8 par defaut)
 		) ;

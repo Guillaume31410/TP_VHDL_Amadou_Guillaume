@@ -20,42 +20,55 @@ architecture DESCR of T_HAUT is
 			Q			:	out std_logic_vector(N-1 downto 0) 
 		) ;
 	end component ;
+	
+	component detect_FM
+	port(	clk 	: 	in std_logic ; -- signal d'horloge 50MHz
+			E 		: 	in std_logic ; -- signal d'entrée 
+			O 		: 	out std_logic -- signal de sortie (E retarde)
+		 ) ;
+	end component ;
 	 
 	constant degre		: integer := 13 ; --il faut compter jusqu'a 5000 pour avoir 0.1ms (donc 1degre)
-	constant angular : integer := 9 ; -- il faut 9 bits pour contenir les 360 degres
+	constant angular 	: integer := 9 ; -- il faut 9 bits pour contenir les 360 degres
 	
-	signal tempo_time	: std_logic_vector(degre - 1 downto 0) ; 
-	signal out_compare: std_logic ;
-	signal angle		: std_logic_vector(angular - 1 downto 0) ;
-	signal reset_synchrone : std_logic ;
+	signal tempo_time			: std_logic_vector(degre - 1 downto 0) ; 
+	signal out_compare		: std_logic ;
+	signal angle				: std_logic_vector(angular - 1 downto 0) ;
+	signal reset_synchrone 	: std_logic ;
+	signal FM					: std_logic ;
 	
 begin 
+
+	front_mont : detect_FM
+		port map(		clk	=>	CLK_50M ,	
+							E		=>	IN_PWM ,
+							O		=> FM
+					) ;
+				
 	uCnt1	:	Cnt
 		generic map(degre)
 		port map(		ARst_N	=> '0'			,
-							Clk 	=>	CLK_50M		,
-							SRst	=> out_compare ,
-							En		=> Start_Stop	,
-							Q		=>	tempo_time	
+							Clk 		=>	CLK_50M		,
+							SRst		=> out_compare ,
+							En			=> '1'	,
+							Q			=>	tempo_time	
 					) ;
 		
 	uCnt2 : Cnt
 		generic map(angular)
 		port map(		ARst_N	=> '0'			,
-							Clk 	=>	CLK_50M		,
-							SRst	=> rising_edge(START_STOP) ,
-							En		=> out_compare 	,
-							Q		=>	angle	
+							Clk 		=>	CLK_50M		,
+							SRst		=> FM ,
+							En			=> out_compare 	,
+							Q			=>	angle	
 					) ;	
-							
+			
 							
 		compare : process(tempo_time) 
 		begin
 			if tempo_time >= 5000 then out_compare <= '1';
 			else out_compare <= '0' ;
 			end if ;
-			
-			--out_compare <= '1' when tempo_time >= 5000 else '0' ;
 		end process compare ;
 								
 	DATA_COMPAS <= angle ; 
