@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Sep 23 09:43:20 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Detect_FM
+Top-level Entity Name : detect_FM
+Family : Cyclone IV E
+Total logic elements : 595
+    Total combinational functions : 440
+    Dedicated logic registers : 417
+Total registers : 417
+Total pins : 3
+Total virtual pins : 0
+Total memory bits : 768
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

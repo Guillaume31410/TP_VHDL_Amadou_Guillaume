@@ -1,0 +1,7 @@
+|Detect_FM
+clk => dE.CLK
+E => FM.IN1
+E => dE.DATAIN
+FM <= FM.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Sep 23 09:43:31 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Detect_FM
+Top-level Entity Name : detect_FM
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 584 / 22,320 ( 3 % )
+    Total combinational functions : 442 / 22,320 ( 2 % )
+    Dedicated logic registers : 417 / 22,320 ( 2 % )
+Total registers : 417
+Total pins : 3 / 154 ( 2 % )
+Total virtual pins : 0
+Total memory bits : 768 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
