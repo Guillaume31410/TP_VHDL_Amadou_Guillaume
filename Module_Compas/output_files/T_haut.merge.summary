@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Thu Sep 23 10:34:56 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : T_haut
+Top-level Entity Name : T_haut
+Family : Cyclone IV E
+Total logic elements : 535
+    Total combinational functions : 408
+    Dedicated logic registers : 370
+Total registers : 370
+Total pins : 15
+Total virtual pins : 0
+Total memory bits : 128
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
