@@ -45,7 +45,7 @@ begin
 					) ;
 				
 	Cnt_time	:	Cnt
-		generic map(degre)
+		generic map(tempo)
 		port map(		ARst_N	=> '0'			,
 							Clk 		=>	CLK_50M		,
 							SRst		=> out_compare ,
