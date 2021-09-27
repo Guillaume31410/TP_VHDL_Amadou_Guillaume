@@ -12,8 +12,10 @@ entity Cnt is
 		) ;
 end entity Cnt	;
 
-architecture rtl of Cnt is 
-	signal sQ	:	 std_logic_vector(N-1 downto 0)	;
+architecture rtl of Cnt is
+	
+signal sQ	:std_logic_vector(N-1 downto 0)	;
+
 begin
 	pCnt : process(Clk, ARst_N)
 	begin
