@@ -11,7 +11,7 @@ end girouette ;
 	
 architecture wind_direction of girouette is
 	component Cnt generic( N : integer := 8 ) ;
-	port(	ARst_N	:	in std_logic ;
+	port(	ARst		:	in std_logic ;
 			Clk		:	in std_logic ;
 			SRst		:	in	std_logic ;
 			EN			:	in	std_logic ; 
@@ -44,16 +44,16 @@ begin
 				
 	Cnt_time	:	Cnt
 		generic map(tempo)
-		port map(		ARst_N	=> '0'			,
+		port map(		ARst		=> '0'			,
 							Clk 		=>	CLK_50M		,
-							SRst		=> out_compare ,
+							SRst		=> out_compare or FM,
 							En			=> IN_PWM		,
 							Q			=>	tempo_time	
 					) ;
 		
 	Cnt_degre : Cnt
 		generic map(angular)
-		port map(		ARst_N	=> '0'			,
+		port map(		ARst		=> '0'			,
 							Clk 		=>	CLK_50M		,
 							SRst		=> FM ,
 							En			=> out_compare 	,

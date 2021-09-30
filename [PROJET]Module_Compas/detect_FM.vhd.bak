@@ -11,15 +11,14 @@ end;
 	
 	
 architecture detection of detect_FM is
-signal dE : std_logic_vector(1 downto 0) ;
+signal dE : std_logic ;
 
 begin
 	bascule_E : process(clk, E)
 	begin
-		if (clk'event and clk='1') then dE(0) <= E ;
-			dE(1) <= dE(0) ;
+		if (clk'event and clk='1') then dE <= E ;
 		end if ;
 	end process bascule_E ;
 	
-FM <= '1' when dE(0) = '1' and dE(1) = '0' else '0' ; 
+FM <= '1' when E = '1' and dE = '0' else '0' ; 
 end detection ;
