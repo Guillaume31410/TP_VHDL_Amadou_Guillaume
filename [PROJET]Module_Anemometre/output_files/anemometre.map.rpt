@@ -1,5 +1,5 @@
 Analysis & Synthesis report for anemometre
-Mon Sep 27 11:12:14 2021
+Tue Oct 26 08:56:13 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -48,7 +48,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 27 11:12:14 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 26 08:56:13 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; anemometre                                  ;
 ; Top-level Entity Name              ; anemometre                                  ;
@@ -72,7 +72,7 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE22F17C6       ;                    ;
 ; Top-level entity name                                            ; anemometre         ; anemometre         ;
-; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                      ; Off                ; Off                ;
@@ -167,14 +167,15 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; ../[PROJET]Module_Compas/Cnt.vhd ; yes             ; User VHDL File  ; C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/Cnt.vhd     ;         ;
-; anemometre.vhd                   ; yes             ; User VHDL File  ; C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
+; ../[PROJET]Module_Compas/detect_FM.vhd ; yes             ; User VHDL File  ; C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/detect_FM.vhd      ;         ;
+; ../[PROJET]Module_Compas/Cnt.vhd       ; yes             ; User VHDL File  ; C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/Cnt.vhd            ;         ;
+; anemometre.vhd                         ; yes             ; User VHDL File  ; C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd ;         ;
++----------------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -218,29 +219,48 @@ refer to the applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                            ;
-+----------------------------------------+--------------------------------------+
-; Register name                          ; Reason for Removal                   ;
-+----------------------------------------+--------------------------------------+
-; Cnt:mesure_freq|sQ[0..7]               ; Stuck at GND due to stuck port clear ;
-; Cnt:cont_1s|sQ[0..25]                  ; Stuck at GND due to stuck port clear ;
-; Total Number of Removed Registers = 34 ;                                      ;
-+----------------------------------------+--------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; Cnt:mesure_freq|sQ[0..7]               ; Stuck at GND due to stuck port clear   ;
+; detect_FM:front_montant|dE[0,1]        ; Lost fanout                            ;
+; Cnt:cont_1s|sQ[0..25]                  ; Stuck at GND due to stuck port clear   ;
+; vitesse[0]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; vitesse[1]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; vitesse[2]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; vitesse[3]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; vitesse[4]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; vitesse[5]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; vitesse[6]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; vitesse[7]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 44 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                              ;
-+-----------------------+-------------------------+----------------------------------------+
-; Register name         ; Reason for Removal      ; Registers Removed due to This Register ;
-+-----------------------+-------------------------+----------------------------------------+
-; Cnt:mesure_freq|sQ[7] ; Stuck at GND            ; Cnt:cont_1s|sQ[24]                     ;
-;                       ; due to stuck port clear ;                                        ;
-; Cnt:mesure_freq|sQ[6] ; Stuck at GND            ; Cnt:cont_1s|sQ[25]                     ;
-;                       ; due to stuck port clear ;                                        ;
-; Cnt:mesure_freq|sQ[5] ; Stuck at GND            ; Cnt:cont_1s|sQ[0]                      ;
-;                       ; due to stuck port clear ;                                        ;
-+-----------------------+-------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                     ;
++-----------------------+-------------------------+-------------------------------------------------------------------------------+
+; Register name         ; Reason for Removal      ; Registers Removed due to This Register                                        ;
++-----------------------+-------------------------+-------------------------------------------------------------------------------+
+; Cnt:mesure_freq|sQ[7] ; Stuck at GND            ; detect_FM:front_montant|dE[1], detect_FM:front_montant|dE[0], vitesse[7]~reg0 ;
+;                       ; due to stuck port clear ;                                                                               ;
+; Cnt:mesure_freq|sQ[6] ; Stuck at GND            ; vitesse[6]~reg0                                                               ;
+;                       ; due to stuck port clear ;                                                                               ;
+; Cnt:mesure_freq|sQ[5] ; Stuck at GND            ; vitesse[5]~reg0                                                               ;
+;                       ; due to stuck port clear ;                                                                               ;
+; Cnt:mesure_freq|sQ[4] ; Stuck at GND            ; vitesse[4]~reg0                                                               ;
+;                       ; due to stuck port clear ;                                                                               ;
+; Cnt:mesure_freq|sQ[3] ; Stuck at GND            ; vitesse[3]~reg0                                                               ;
+;                       ; due to stuck port clear ;                                                                               ;
+; Cnt:mesure_freq|sQ[2] ; Stuck at GND            ; vitesse[2]~reg0                                                               ;
+;                       ; due to stuck port clear ;                                                                               ;
+; Cnt:mesure_freq|sQ[1] ; Stuck at GND            ; vitesse[1]~reg0                                                               ;
+;                       ; due to stuck port clear ;                                                                               ;
+; Cnt:mesure_freq|sQ[0] ; Stuck at GND            ; vitesse[0]~reg0                                                               ;
+;                       ; due to stuck port clear ;                                                                               ;
++-----------------------+-------------------------+-------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -280,21 +300,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------+
 ; Port Connectivity Checks: "Cnt:mesure_freq" ;
-+--------+-------+----------+-----------------+
-; Port   ; Type  ; Severity ; Details         ;
-+--------+-------+----------+-----------------+
-; arst_n ; Input ; Info     ; Stuck at GND    ;
-+--------+-------+----------+-----------------+
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; arst ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
 
 
-+------------------------------------------+
-; Port Connectivity Checks: "Cnt:cont_1s"  ;
-+--------+-------+----------+--------------+
-; Port   ; Type  ; Severity ; Details      ;
-+--------+-------+----------+--------------+
-; arst_n ; Input ; Info     ; Stuck at GND ;
-; en     ; Input ; Info     ; Stuck at VCC ;
-+--------+-------+----------+--------------+
++-----------------------------------------+
+; Port Connectivity Checks: "Cnt:cont_1s" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; arst ; Input ; Info     ; Stuck at GND  ;
+; en   ; Input ; Info     ; Stuck at VCC  ;
++------+-------+----------+---------------+
 
 
 +-----------------------------------------------------+
@@ -327,62 +347,59 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Sep 27 11:11:54 2021
+    Info: Processing started: Tue Oct 26 08:55:54 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off anemometre -c anemometre
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /users/maison/desktop/tp vhdl/tp_vhdl_amadou_guillaume/[projet]module_compas/cnt.vhd
-    Info (12022): Found design unit 1: Cnt-rtl File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/Cnt.vhd Line: 15
-    Info (12023): Found entity 1: Cnt File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/Cnt.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/utilisateur/documents/github/tp_vhdl_amadou_guillaume/[projet]module_compas/detect_fm.vhd
+    Info (12022): Found design unit 1: detect_FM-detection File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/detect_FM.vhd Line: 13
+    Info (12023): Found entity 1: detect_FM File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/detect_FM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/utilisateur/documents/github/tp_vhdl_amadou_guillaume/[projet]module_compas/cnt.vhd
+    Info (12022): Found design unit 1: Cnt-rtl File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/Cnt.vhd Line: 15
+    Info (12023): Found entity 1: Cnt File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Compas/Cnt.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file anemometre.vhd
-    Info (12022): Found design unit 1: anemometre-description File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 20
-    Info (12023): Found entity 1: anemometre File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 7
+    Info (12022): Found design unit 1: anemometre-description File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 20
+    Info (12023): Found entity 1: anemometre File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 7
 Info (12127): Elaborating entity "anemometre" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at anemometre.vhd(14): used implicit default value for signal "data_valid" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 14
-Warning (10541): VHDL Signal Declaration warning at anemometre.vhd(15): used implicit default value for signal "data_anemometre" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-Info (10041): Inferred latch for "vitesse[0]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (10041): Inferred latch for "vitesse[1]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (10041): Inferred latch for "vitesse[2]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (10041): Inferred latch for "vitesse[3]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (10041): Inferred latch for "vitesse[4]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (10041): Inferred latch for "vitesse[5]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (10041): Inferred latch for "vitesse[6]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (10041): Inferred latch for "vitesse[7]" at anemometre.vhd(64) File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-Info (12128): Elaborating entity "Cnt" for hierarchy "Cnt:cont_1s" File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 38
-Info (12128): Elaborating entity "Cnt" for hierarchy "Cnt:mesure_freq" File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 47
+Warning (10541): VHDL Signal Declaration warning at anemometre.vhd(14): used implicit default value for signal "data_valid" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 14
+Warning (10541): VHDL Signal Declaration warning at anemometre.vhd(15): used implicit default value for signal "data_anemometre" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+Info (12128): Elaborating entity "Cnt" for hierarchy "Cnt:cont_1s" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 44
+Info (12128): Elaborating entity "detect_FM" for hierarchy "detect_FM:front_montant" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 53
+Info (12128): Elaborating entity "Cnt" for hierarchy "Cnt:mesure_freq" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 60
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "data_valid" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 14
-    Warning (13410): Pin "data_anemometre[0]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "data_anemometre[1]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "data_anemometre[2]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "data_anemometre[3]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "data_anemometre[4]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "data_anemometre[5]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "data_anemometre[6]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "data_anemometre[7]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 15
-    Warning (13410): Pin "vitesse[0]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-    Warning (13410): Pin "vitesse[1]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-    Warning (13410): Pin "vitesse[2]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-    Warning (13410): Pin "vitesse[3]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-    Warning (13410): Pin "vitesse[4]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-    Warning (13410): Pin "vitesse[5]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-    Warning (13410): Pin "vitesse[6]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
-    Warning (13410): Pin "vitesse[7]" is stuck at GND File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 64
+    Warning (13410): Pin "data_valid" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 14
+    Warning (13410): Pin "data_anemometre[0]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "data_anemometre[1]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "data_anemometre[2]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "data_anemometre[3]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "data_anemometre[4]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "data_anemometre[5]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "data_anemometre[6]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "data_anemometre[7]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 15
+    Warning (13410): Pin "vitesse[0]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+    Warning (13410): Pin "vitesse[1]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+    Warning (13410): Pin "vitesse[2]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+    Warning (13410): Pin "vitesse[3]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+    Warning (13410): Pin "vitesse[4]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+    Warning (13410): Pin "vitesse[5]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+    Warning (13410): Pin "vitesse[6]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+    Warning (13410): Pin "vitesse[7]" is stuck at GND File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 78
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk_50MHZ" File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 9
-    Warning (15610): No output dependent on input pin "raz_n" File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 10
-    Warning (15610): No output dependent on input pin "in_frq" File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 11
-    Warning (15610): No output dependent on input pin "continu" File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 12
-    Warning (15610): No output dependent on input pin "start_stop" File: C:/Users/Maison/Desktop/tp vhdl/TP_VHDL_Amadou_Guillaume/[PROJET]Anemometre/anemometre.vhd Line: 13
+    Warning (15610): No output dependent on input pin "clk_50MHZ" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 9
+    Warning (15610): No output dependent on input pin "raz_n" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 10
+    Warning (15610): No output dependent on input pin "in_frq" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 11
+    Warning (15610): No output dependent on input pin "continu" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 12
+    Warning (15610): No output dependent on input pin "start_stop" File: C:/Users/Utilisateur/Documents/GitHub/TP_VHDL_Amadou_Guillaume/[PROJET]Module_Anemometre/anemometre.vhd Line: 13
 Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 17 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 4791 megabytes
-    Info: Processing ended: Mon Sep 27 11:12:14 2021
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Peak virtual memory: 4784 megabytes
+    Info: Processing ended: Tue Oct 26 08:56:13 2021
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:44
 
 

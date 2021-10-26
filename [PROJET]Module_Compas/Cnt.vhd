@@ -17,7 +17,7 @@ architecture rtl of Cnt is
 signal sQ	:std_logic_vector(N-1 downto 0)	;
 
 begin
-	pCnt : process(Clk, ARst_N)
+	pCnt : process(Clk, ARst)
 	begin
 		if ARst = '0' then sQ <= (others => '0') ;	-- RAZ asynchrone
 		elsif (Clk'event and Clk='1') then 
