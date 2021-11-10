@@ -2,7 +2,68 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "vitesse[0]",
+					"strict" : false
+				},
+				{
+					"name" : "vitesse[1]",
+					"strict" : false
+				},
+				{
+					"name" : "vitesse[2]",
+					"strict" : false
+				},
+				{
+					"name" : "vitesse[3]",
+					"strict" : false
+				},
+				{
+					"name" : "vitesse[4]",
+					"strict" : false
+				},
+				{
+					"name" : "vitesse[5]",
+					"strict" : false
+				},
+				{
+					"name" : "vitesse[6]",
+					"strict" : false
+				},
+				{
+					"name" : "vitesse[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50MHZ",
+					"strict" : false
+				},
+				{
+					"name" : "raz",
+					"strict" : false
+				},
+				{
+					"name" : "in_frq",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

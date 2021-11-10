@@ -10,27 +10,20 @@ clk_50MHZ => vitesse[6]~reg0.CLK
 clk_50MHZ => vitesse[7]~reg0.CLK
 clk_50MHZ => detect_FM:front_montant.clk
 clk_50MHZ => Cnt:mesure_freq.Clk
-raz_n => ~NO_FANOUT~
+raz => Cnt:cont_1s.ARst
+raz => Cnt:mesure_freq.ARst
 in_frq => detect_FM:front_montant.E
 continu => ~NO_FANOUT~
 start_stop => ~NO_FANOUT~
-data_valid << data_valid.DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[1] << data_anemometre[1].DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[2] << data_anemometre[2].DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[3] << data_anemometre[3].DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[4] << data_anemometre[4].DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[5] << data_anemometre[5].DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[6] << data_anemometre[6].DB_MAX_OUTPUT_PORT_TYPE
-data_anemometre[7] << data_anemometre[7].DB_MAX_OUTPUT_PORT_TYPE
-vitesse[0] << vitesse[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vitesse[1] << vitesse[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vitesse[2] << vitesse[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vitesse[3] << vitesse[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vitesse[4] << vitesse[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vitesse[5] << vitesse[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vitesse[6] << vitesse[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vitesse[7] << vitesse[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_valid <= comb.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[0] <= vitesse[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[1] <= vitesse[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[2] <= vitesse[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[3] <= vitesse[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[4] <= vitesse[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[5] <= vitesse[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[6] <= vitesse[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vitesse[7] <= vitesse[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |anemometre|Cnt:cont_1s

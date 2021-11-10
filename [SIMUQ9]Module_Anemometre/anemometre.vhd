@@ -29,7 +29,7 @@ end component ;
 
 component detect_FM
  	PORT(	clk 		: in std_logic ; -- signal d'horloge 50MHz
-			E 			: in std_logic ; -- signal d'entrée 
+			E 			: in std_logic ; -- signal d'entrï¿½e 
 			FM 		: out std_logic -- signal de sortie (E retarde)
 		 ) ;
 end component ;
@@ -39,7 +39,7 @@ signal  	data :std_logic;
 signal  	inf_seconde : std_logic ; -- sortie du comparateur < 1s
 signal  	cmp_50M      :std_logic_vector(25 downto 0) ; --sortie a comparer avec 50MHZ
 signal 	sFM			: std_logic ; -- signal Front Montant
-signal tempVIT : std_logic_vector(7 downto 0) ; -- mémoire tampon de la vitesse
+signal tempVIT : std_logic_vector(7 downto 0) ; -- mï¿½moire tampon de la vitesse
 
 begin 
 cont_1s : Cnt
@@ -66,13 +66,8 @@ mesure_freq : Cnt
 				EN		=> (not inf_seconde) and sFM ,	
 				Q		=> v_mes
 			);
-			
-compare :process(cmp_50M, clk_50MHZ)
- begin 
-        if cmp_50M >= 50E3 then inf_seconde <='1'; -- comparaison avec 50e3 (equivalent 1s), mise à 1 du drapeau
-	     else inf_seconde <='0';
-	     end if ;	    
- end process;
+ 
+inf_seconde <=	'1' when cmp_50M >= 50E6 else '0' ; -- comparaison avec 50e6 (equivalent 1s), mise a 1 du drapeau
  
  refresh : process(inf_seconde, clk_50MHZ)
  begin
