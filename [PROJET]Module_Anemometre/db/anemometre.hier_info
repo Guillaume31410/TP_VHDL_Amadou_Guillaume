@@ -1,5 +1,6 @@
 |anemometre
 clk_50MHZ => Cnt:cont_1s.Clk
+clk_50MHZ => data_valid~reg0.CLK
 clk_50MHZ => vitesse[0]~reg0.CLK
 clk_50MHZ => vitesse[1]~reg0.CLK
 clk_50MHZ => vitesse[2]~reg0.CLK
@@ -10,12 +11,15 @@ clk_50MHZ => vitesse[6]~reg0.CLK
 clk_50MHZ => vitesse[7]~reg0.CLK
 clk_50MHZ => detect_FM:front_montant.clk
 clk_50MHZ => Cnt:mesure_freq.Clk
+raz => comb.IN1
+raz => comb.IN1
 raz => Cnt:cont_1s.ARst
 raz => Cnt:mesure_freq.ARst
 in_frq => detect_FM:front_montant.E
-continu => ~NO_FANOUT~
-start_stop => ~NO_FANOUT~
-data_valid <= comb.DB_MAX_OUTPUT_PORT_TYPE
+continu => machine_etats.IN0
+continu => machine_etats.IN1
+start_stop => machine_etats.IN1
+data_valid <= data_valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vitesse[0] <= vitesse[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vitesse[1] <= vitesse[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vitesse[2] <= vitesse[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

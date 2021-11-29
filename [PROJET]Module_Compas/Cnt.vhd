@@ -19,7 +19,7 @@ signal sQ	:std_logic_vector(N-1 downto 0)	;
 begin
 	pCnt : process(Clk, ARst)
 	begin
-		if ARst = '0' then sQ <= (others => '0') ;	-- RAZ asynchrone
+		if ARst = '1' then sQ <= (others => '0') ;	-- RAZ asynchrone
 		elsif (Clk'event and Clk='1') then 
 			if SRst = '1' then sQ <= (others => '0') ;-- RAZ synchrone
 			elsif EN = '1' then sQ <= sQ + 1 ;		-- Incrementation
