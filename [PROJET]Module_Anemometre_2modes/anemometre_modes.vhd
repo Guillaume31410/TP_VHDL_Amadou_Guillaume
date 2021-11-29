@@ -56,10 +56,10 @@ end process;
 
 cont_1s : Cnt
 	generic map (26)
-	port map(ARst	=> '0',--raz , 
+	port map(ARst	=> not raz , 
 				Clk	=> clk_50Mhz ,
 				SRst	=> inf_seconde ,
-				EN		=> '1', --capture,	
+				EN		=> capture,	
 				Q		=> cmp_50M
 			);
 
@@ -72,10 +72,10 @@ front_montant : detect_FM
 			
 mesure_freq : Cnt
 	generic map (8) 
-	port map(ARst	=> '0', --raz ,
+	port map(ARst	=> not raz ,
 				Clk	=> clk_50Mhz , 
 				SRst	=> inf_seconde ,
-				EN		=> SFM ,	
+				EN		=> SFM and capture ,	
 				Q		=> v_mes
 			);
  
@@ -84,7 +84,10 @@ inf_seconde <=	'1' when cmp_50M >= 50E6 else '0' ; -- comparaison avec 50e6 (equ
  refresh : process(clk_50MHZ)
  begin
 		if (clk_50MHZ'event and clk_50MHZ = '1') then
-			if inf_seconde = '1' then vitesse <= v_mes ;
+			if inf_seconde = '1' then 
+				vitesse <= v_mes ;
+				data_valid <= '1' ;
+			else data_valid <= '0' ;
 			end if ;
 		end if ;
  end process ;
@@ -107,7 +110,7 @@ machine_moore : process(clk_50MHz)
 	end if ;
 end process ; 
 
-capture <= '1' when etat=st2 else '0' ;
+capture <= '1' when (etat=st2 and inf_seconde='0') else '0' ;
 
 		  
 end description;
