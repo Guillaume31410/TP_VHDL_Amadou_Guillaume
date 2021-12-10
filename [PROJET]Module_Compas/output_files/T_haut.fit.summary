@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sun Nov 28 12:24:02 2021
+Fitter Status : Successful - Mon Dec 06 10:46:59 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : T_haut
-Top-level Entity Name : Cnt
+Top-level Entity Name : COMPAS
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 707 / 22,320 ( 3 % )
-    Total combinational functions : 506 / 22,320 ( 2 % )
-    Dedicated logic registers : 536 / 22,320 ( 2 % )
-Total registers : 536
-Total pins : 12 / 154 ( 8 % )
+Total logic elements : 1,082 / 22,320 ( 5 % )
+    Total combinational functions : 628 / 22,320 ( 3 % )
+    Dedicated logic registers : 895 / 22,320 ( 4 % )
+Total registers : 895
+Total pins : 15 / 154 ( 10 % )
 Total virtual pins : 0
-Total memory bits : 9,216 / 608,256 ( 2 % )
+Total memory bits : 71,680 / 608,256 ( 12 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

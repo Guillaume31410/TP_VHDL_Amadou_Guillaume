@@ -4,51 +4,47 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Q[0]",
+					"name" : "DATA_COMPAS[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Q[1]",
+					"name" : "DATA_COMPAS[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Q[2]",
+					"name" : "DATA_COMPAS[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Q[3]",
+					"name" : "DATA_COMPAS[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Q[4]",
+					"name" : "DATA_COMPAS[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Q[5]",
+					"name" : "DATA_COMPAS[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Q[6]",
+					"name" : "DATA_COMPAS[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Q[7]",
+					"name" : "DATA_COMPAS[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Clk",
+					"name" : "DATA_COMPAS[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ARst",
+					"name" : "CLK_50M",
 					"strict" : false
 				},
 				{
-					"name" : "SRst",
-					"strict" : false
-				},
-				{
-					"name" : "EN",
+					"name" : "IN_PWM",
 					"strict" : false
 				},
 				{
