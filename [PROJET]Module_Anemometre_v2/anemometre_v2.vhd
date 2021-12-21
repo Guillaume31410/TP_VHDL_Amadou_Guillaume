@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
-entity anemometre is 
+entity anemometre_v2 is 
 
 port (clk_50MHZ : in std_logic;
       raz_n     : in std_logic;
@@ -14,9 +14,9 @@ port (clk_50MHZ : in std_logic;
 		data_valid   :out std_logic;
 		vitesse         :out std_logic_vector (7 downto 0)
 );
-end anemometre;
+end anemometre_v2;
 
-architecture description of anemometre is 
+architecture description of anemometre_v2 is 
 
 component Cnt generic(N : integer := 8);
 	port(	ARst	:	in	std_logic	;		-- Reset asynchrone 
@@ -38,8 +38,17 @@ signal	v_mes :std_logic_vector(7 downto 0);
 signal  	inf_seconde : std_logic ; -- sortie du comparateur < 1s
 signal  	cmp_50M      :std_logic_vector(25 downto 0) ; --sortie a comparer avec 50MHZ
 signal 	sFM			: std_logic ; -- signal Front Montant
+signal 	s_in_frq : std_logic ; --signal d'entree synchrone
 
 begin 
+
+synchronise : process (clk_50MHZ) -- pour synchroniser le signal d'entree a l'horloge
+begin
+	if rising_edge(clk_50MHZ) then
+		s_in_frq <= in_frq;
+	end if;
+end process;
+
 cont_1s : Cnt
 	generic map (26)
 	port map(ARst	=> '0' ,
@@ -51,7 +60,7 @@ cont_1s : Cnt
 
 front_montant : detect_FM
 	port map(clk	=> clk_50Mhz , 
-				E		=> in_frq ,
+				E		=> s_in_frq ,
 				FM		=> sFM
 			);
 
