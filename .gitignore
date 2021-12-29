@@ -5,3 +5,6 @@
 !*.qpf
 !*.pdf
 !*/
+!*.c
+!*.h
+!*.project
