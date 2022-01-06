@@ -1,0 +1,17 @@
+
+State Machine - |gestion_bouttons|\g_bouttons:state
+Name \g_bouttons:state.S13 \g_bouttons:state.S12 \g_bouttons:state.S11 \g_bouttons:state.S10 \g_bouttons:state.S9 \g_bouttons:state.S8 \g_bouttons:state.S7 \g_bouttons:state.S6 \g_bouttons:state.S5 \g_bouttons:state.S4 \g_bouttons:state.S3 \g_bouttons:state.S2 \g_bouttons:state.S1 \g_bouttons:state.S0 
+\g_bouttons:state.S0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+\g_bouttons:state.S1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+\g_bouttons:state.S2 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+\g_bouttons:state.S3 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+\g_bouttons:state.S4 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+\g_bouttons:state.S5 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+\g_bouttons:state.S6 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+\g_bouttons:state.S7 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+\g_bouttons:state.S8 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+\g_bouttons:state.S9 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+\g_bouttons:state.S10 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+\g_bouttons:state.S11 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+\g_bouttons:state.S12 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+\g_bouttons:state.S13 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
