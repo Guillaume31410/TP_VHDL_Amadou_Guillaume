@@ -61,8 +61,4 @@ set_global_assignment -name SIGNALTAP_FILE output_files/stp1.stp
 set_location_assignment PIN_P2 -to raz
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
-set_global_assignment -name VHDL_FILE bip.vhd
-set_global_assignment -name VHDL_FILE "../../Users/etudiant/Desktop/projet-vhdl/gestion1_bouttons.vhd"
-set_global_assignment -name VHDL_FILE "../../Users/etudiant/Desktop/projet-vhdl/gestion_bouttons.vhd"
-set_global_assignment -name VHDL_FILE bipppp.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

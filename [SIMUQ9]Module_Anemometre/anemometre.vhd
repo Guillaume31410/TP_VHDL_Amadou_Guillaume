@@ -67,7 +67,7 @@ mesure_freq : Cnt
 				Q		=> v_mes
 			);
  
-inf_seconde <=	'1' when cmp_50M >= 50E6 else '0' ; -- comparaison avec 50e6 (equivalent 1s), mise a 1 du drapeau
+inf_seconde <=	'1' when cmp_50M >= 50E3 else '0' ; -- comparaison avec 50e6 (equivalent 1s), mise a 1 du drapeau
  
  refresh : process(inf_seconde, clk_50MHZ)
  begin
